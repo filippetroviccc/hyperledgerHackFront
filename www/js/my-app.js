@@ -20,9 +20,9 @@ $$('#dugmePosalji').on('click',function(){
 })
 
 $$('#dugmePosalji').on('click',function(){
-    var data = $('#idLeka').val();
+    var data = $$('#idLeka').val();
     console.log(data);
-    $.ajax({
+    $$.ajax({
         type: 'get',    
         url:'http://localhost:3000/api/queries/selectCommoditiesByExchange?serialNumber=' + data,
         dataType: 'application/json',

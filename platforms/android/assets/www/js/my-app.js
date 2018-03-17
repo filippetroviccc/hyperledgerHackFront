@@ -18,3 +18,19 @@ $$('#dugmePosalji').on('click',function(){
     myApp.alert('<div id="SuccesReply"><img src="images/checked.png" alt="" class="checkedImg"></div>','Verified!');
     myApp.alert('<div id="ErrorReply"><img src="images/warning.png" alt="" class="checkedImg"></div>','Report!');
 })
+
+$$('#dugmePosalji').on('click',function(){
+    var data = $$('#idLeka').val();
+    console.log(data);
+    $$.ajax({
+        type: 'get',    
+        url:'http://localhost:3000/api/queries/selectCommoditiesByExchange?serialNumber=' + data,
+        dataType: 'application/json',
+        success: function(data){
+            console.log(data);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    })
+})

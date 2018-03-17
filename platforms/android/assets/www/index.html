@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
             -->
-            <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+            <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com https://tranquil-hamlet-87466.herokuapp.com/ 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
 
             <!-- Required meta tags-->
             <meta charset="utf-8">
@@ -60,7 +60,7 @@
                             <img src="images/icon.png" id="logoSlika" alt="">
                             <h2 class="imageText">Verify</h2>
                             <div id="inputLek">
-                                <input type="text" name="idLeka" placeholder="Enter drug ID">
+                                <input type="text" name="idLeka" id ="idLeka" placeholder="Enter drug ID">
                             </div>
                             <br>
                             <button id="dugmePosalji">Send</button>
