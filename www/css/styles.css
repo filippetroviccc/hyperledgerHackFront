@@ -1,0 +1,74 @@
+.statusbar-overlay {
+    background: #000000;
+}
+body {
+	background-color: #1e243c;
+}
+
+.page {
+	background-color: transparent;
+}
+#inputLek {
+	width: 100%;
+	border: 0;
+	border-radius: 3px;
+	background-color: #384363;
+	color: #fff;
+	padding: 0;
+}
+#inputLek input {
+	width: 98%;
+	line-height: 3em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	display: block;
+}
+#dugmePosalji, .modal-button {
+	width: 100%;
+	background-color: #3668b1;
+	border: 0;
+	line-height: 3em;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: 1px 3px #1b4d96;
+}
+#logoSlika {
+	width: 45%;
+	display: block;
+	margin: 0 auto;
+}
+.imageText {
+	color: #fff;
+	font-weight: bold;
+	font-size: 30px;
+	margin: 15px 0;
+	text-align: center;
+}
+.page-content {
+	display: table;
+	margin: 0 auto;
+}
+.content-block {
+	vertical-align: middle;
+	display: table-cell;
+}
+.checkedImg {
+	width: 45%;
+}
+#SuccesReply {}
+#ErrorReply {}
+.modal-inner {
+	text-align: center;
+}
+.modal-buttons {
+	margin-bottom: 8px;
+}
+#dugmePosalji.active-state, .modal-button.active-state {
+	background-color: #1b4d96;
+}
