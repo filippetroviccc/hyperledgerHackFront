@@ -15,19 +15,25 @@ $$(document).on('deviceready', function() {
 });
 
 $$('#dugmePosalji').on('click',function(){
-    myApp.alert('<div id="SuccesReply"><img src="images/checked.png" alt="" class="checkedImg"></div>','Verified!');
-    myApp.alert('<div id="ErrorReply"><img src="images/warning.png" alt="" class="checkedImg"></div>','Report!');
-})
-
-$$('#dugmePosalji').on('click',function(){
     var data = $$('#idLeka').val();
-    console.log(data);
     $$.ajax({
         type: 'get',    
-        url:'http://localhost:3000/api/queries/selectCommoditiesByExchange?serialNumber=' + data,
+        url:'http://localhost:3000/api/queries/checkForDrug?serialNumber=' + data,
         dataType: 'application/json',
         success: function(data){
+            data=JSON.parse(data)
             console.log(data);
+            if(data.length>0){
+                var location = "";
+                for(var i=0;i<data[0].registeredLocations.length;i++){
+                    location += data[0].registeredLocations[i]+" ";
+                    console.log(data[0].registeredLocations[i]);
+                }
+                console.log(location)
+                myApp.alert('<div id="SuccesReply"><img src="images/checked.png" alt="" class="checkedImg"><div>'+location+'</div></div>',data[0].name + ' verified!');
+            }else{
+                myApp.alert('<div id="ErrorReply"><img src="images/warning.png" alt="" class="checkedImg"></div>','Report!');
+            }
         },
         error: function(err){
             console.log(err);
